@@ -176,8 +176,8 @@
             _stage.strokeRect( _mouse.x - (_pieceWidth / 2), _mouse.y - (_pieceHeight / 2), _pieceWidth,_pieceHeight);
         }
         function pieceDropped(e){
-            document.onmousemove = null;
-            document.onmouseup = null;
+            document.touchmove = null;
+            document.touchend = null;
             if(_currentDropPiece != null){
                 var tmp = {xPos:_currentPiece.xPos,yPos:_currentPiece.yPos};
                 _currentPiece.xPos = _currentDropPiece.xPos;
@@ -207,9 +207,9 @@
         function gameOver(){
 			confirm("Are you ready?");
 			document.body.style.backgroundImage = 'url(http://www.zwani.com/graphics/baby/its-a-boy/images/14-its-a-boy.gif)';
-            document.onmousedown = null;
-            document.onmousemove = null;
-            document.onmouseup = null;
+            document.touchstart = null;
+            document.touchmove = null;
+            document.touchend = null;
             //initPuzzle();
         }
         function shuffleArray(o){
